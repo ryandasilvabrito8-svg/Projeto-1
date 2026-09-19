@@ -1,20 +1,21 @@
-      
-
-*{
+   * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
 body {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     line-height: 1.6;
+    background-color: #1c120d;
+    color: #f5e6d3;
 }
 
+/* CABEÇALHO */
 
 header {
-    background-color: cornflowerblue;
-    color: rgb(22, 39, 70);
+    background-color: #21140e;
+    color: #f5e6d3;
     padding: 1rem 2rem;
 }
 
@@ -24,6 +25,12 @@ nav {
     align-items: center;
 }
 
+.logo {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #f5c27a;
+}
+
 nav ul {
     list-style: none;
     display: flex;
@@ -31,61 +38,103 @@ nav ul {
 }
 
 nav a {
-    color: rgb(26, 54, 107);
+    color: #f5e6d3;
     text-decoration: none;
     font-weight: bold;
 }
 
 nav a:hover {
-    color: rgb(19, 35, 68);
+    color: #e67e22;
 }
 
 
+/* PÁGINA INICIAL */
+
 #hero {
     height: 80vh;
-    background-color: rgb(44, 78, 141);
+    background-image: url("img/strogonoff.jpg.jpg");
+    background-size: cover;
+    background-position: center;
+
+    position: relative;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
     text-align: center;
     padding: 0 2rem;
+}
+
+/* COLOQUE AQUI */
+#hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(0, 0, 0, 0.5);
+    pointer-events: none;
+}
+
+.hero-conteudo {
+    max-width: 800px;
+    position: relative;
+    z-index: 1;
 }
 
 #hero h1 {
     font-size: 3rem;
     margin-bottom: 1rem;
-    color: rgb(10, 34, 78);
+    color: #f5e6d3;
 }
+
+#hero p {
+    font-size: 1.2rem;
+    color: #e8c9a8;
+}
+
+
+/* BOTÕES */
 
 .btn {
     display: inline-block;
-    background-color: black;
-    color: cornflowerblue;
+    background-color: #e67e22;
+    color: white;
+
     padding: 0.75rem 1.5rem;
+
     text-decoration: none;
     border-radius: 5px;
+
     margin-top: 1.5rem;
+
     font-weight: bold;
 }
 
 .btn:hover {
-    background-color: rgb(22, 27, 104);
+    background-color: #c95f0b;
 }
 
 
+/* CARDÁPIO */
+
 .services {
     padding: 80px 24px;
-    background-color: rgb(39, 56, 131);
-    max-width: auto;
-    margin: 0 auto;
+    background-color: #f5e6d3;
+
+    text-align: center;
 }
 
 .section-title {
     text-align: center;
     font-size: 2rem;
     margin-bottom: 50px;
-    color: rgb(8, 11, 43);
+    color: #3a2115;
 }
 
 .cards-conteiner {
@@ -96,77 +145,134 @@ nav a:hover {
 }
 
 .card {
-    background-color: rgb(68, 106, 177);
-    color: bisque;
-    border: 1px solid #ffff;
+    background-color: #fffaf5;
+    color: #3a2115;
+
+    border: 1px solid #d8b99b;
     border-radius: 10px;
+
     padding: 32px;
+
     flex: 1 1 280px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 1);
+
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 20px;
 }
 
 .card h3 {
     margin-bottom: 12px;
-    color: rgb(10, 34, 78)
+    color: #3a2115
+}
+
+.card p {
+    color: #5a4030;
+}
+.services > p {
+    margin-top: 30px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #3a2115;
+}
+
+.services > h3 {
+    margin-top: 40px;
+    margin-bottom: 10px;
+    font-size: 1.4rem;
+    color: #a84d16
 }
 
 
+/* SOBRE */
 
 .cta {
-    background-color: rgb(51, 52, 54);
-    color: blanchedalmond;
+    background-color: #2b1a12;
+    color: #f5e6d3;
+
     text-align: center;
+
     padding: 80px 24px;
 }
 
 .cta h2 {
     font-size: 2rem;
-    margin-bottom: 10px;
-    color: rgb(106, 112, 112);
+    margin-bottom: 20px;
+    color: #f5c27a;
 }
 
 .cta p {
     font-family: Arial, Helvetica, sans-serif;
-    border: 1px solid;
+
+    max-width: 800px;
+    margin: 0 auto 20px;
+
+    background-color: #3a2115;
+
+    padding: 20px;
+
     border-radius: 5px;
-    background-color: dimgray;
-    padding: 14px;
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 1);
-    font-weight: bold;
-    margin-bottom: 40px;
+
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.4);
 }
 
-#btn-secundario{
-    background-color: rgb(94, 94, 94);
-    color: rgb(250, 250, 250);
+
+/* BOTÃO SECUNDÁRIO */
+
+#btn-secundario {
+    background-color: #e67e22;
+    color: white;
+
     transition: all 0.3s ease;
 }
 
 #btn-secundario:hover {
-    background-color: rgb(80, 80, 80);
+    background-color: #c95f0b;
 }
 
+
+/* RODAPÉ */
+
 .footer {
-    background-color: black;
-    color: aliceblue;
+    background-color: #120b08;
+    color: #f5e6d3;
+
     text-align: center;
+
     padding: 32px 24px;
 }
 
 .social-link {
     display: flex;
     justify-content: center;
+
     gap: 28px;
+
     list-style: none;
-    margin-top: 15px
+
+    margin-top: 15px;
 }
 
-.social-links a {
-    color: aliceblue;
+.social-link a {
+    color: #f5e6d3;
     text-decoration: none;
-    transition: all 0.6s ease;
+
+    transition: all 0.3s ease;
 }
 
 .social-link a:hover {
-    color: dimgrey;
-}
+    color: #e67e22;
+}   
+
